@@ -29,6 +29,7 @@ import java.awt.Dimension;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import net.runelite.api.annotations.VisibleForDevtools;
@@ -747,7 +748,7 @@ public interface Client extends GameEngine
 	 * @param varps passed varbits
 	 * @param varbitId the variable ID
 	 * @return the value
-	 * @see Varbits#id
+	 * @see Varbits
 	 */
 	@VisibleForDevtools
 	int getVarbitValue(int[] varps, int varbitId);
@@ -758,7 +759,7 @@ public interface Client extends GameEngine
 	 * @param varps passed varps
 	 * @param varpId the VarpPlayer id
 	 * @return the value
-	 * @see VarPlayer#id
+	 * @see VarPlayer
 	 */
 	@VisibleForDevtools
 	int getVarpValue(int[] varps, int varpId);
@@ -769,7 +770,7 @@ public interface Client extends GameEngine
 	 * @param varps passed varps
 	 * @param varpId the VarpPlayer id
 	 * @param value the value
-	 * @see VarPlayer#id
+	 * @see VarPlayer
 	 */
 	@VisibleForDevtools
 	void setVarpValue(int[] varps, int varpId, int value);
@@ -780,7 +781,7 @@ public interface Client extends GameEngine
 	 * @param varps passed varbits
 	 * @param varbit the variable
 	 * @param value the value
-	 * @see Varbits#id
+	 * @see Varbits
 	 */
 	@VisibleForDevtools
 	void setVarbitValue(int[] varps, int varbit, int value);
@@ -1489,7 +1490,47 @@ public interface Client extends GameEngine
 	 * @param state new NPC hidden state
 	 */
 	void setNPCsHidden(boolean state);
+	/**
+	 * Increments the counter for how many times this npc has been selected to be hidden
+	 *
+	 * @param name npc name
+	 */
+	void addHiddenNpcName(String name);
 
+	/**
+	 * Decrements the counter for how many times this npc has been selected to be hidden
+	 *
+	 * @param name npc name
+	 */
+	void removeHiddenNpcName(String name);
+
+	/**
+	 * Forcibly unhides an npc by setting its counter to zero
+	 *
+	 * @param name npc name
+	 */
+	void forciblyUnhideNpcName(String name);
+
+	/**
+	 * Increments the counter for how many times this npc has been selected to be hidden on death
+	 *
+	 * @param name npc name
+	 */
+	void addHiddenNpcDeath(String name);
+
+	/**
+	 * Decrements the counter for how many times this npc has been selected to be hidden on death
+	 *
+	 * @param name npc name
+	 */
+	void removeHiddenNpcDeath(String name);
+
+	/**
+	 * Forcibly unhides a hidden-while-dead npc by setting its counter to zero
+	 *
+	 * @param name npc name
+	 */
+	void forciblyUnhideNpcDeath(String name);
 	/**
 	 * Sets whether 2D sprites (ie. overhead prayers) related to
 	 * the NPCs are hidden.
@@ -1511,14 +1552,32 @@ public interface Client extends GameEngine
 	 * @param state new attacker hidden state
 	 */
 	void setAttackersHidden(boolean state);
-
+	/**
+	 * Hides players input here.
+	 *
+	 * @param names the names of the players
+	 */
+	void setHideSpecificPlayers(List<String> names);
 	/**
 	 * Sets whether projectiles are hidden.
 	 *
 	 * @param state new projectile hidden state
 	 */
 	void setProjectilesHidden(boolean state);
+	/**
+	 * Sets whether dead NPCs are hidden.
+	 *
+	 * @param state new NPC hidden state
+	 */
+	void setDeadNPCsHidden(boolean state);
 
+	/**
+	 * The provided ids will not be hidden when the
+	 * entity-hider attempts to hide dead {@link NPC}'s.
+	 *
+	 * @param blacklist set of npc ids.
+	 */
+	void setBlacklistDeadNpcs(Set<Integer> blacklist);
 	/**
 	 * Gets an array of tile collision data.
 	 * <p>

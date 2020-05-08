@@ -1,6 +1,5 @@
-package net.runelite.client.plugins;
 /*
- * Copyright (c) 2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2018, Jordan Atwood <jordan.atwood423@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,40 +22,23 @@ package net.runelite.client.plugins;
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+package net.runelite.client.plugins.inferno.displaymodes;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-@Documented
-public @interface PluginDescriptor
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public enum InfernoWaveDisplayMode
 {
-	String name();
+	CURRENT("Current wave"),
+	NEXT("Next wave"),
+	BOTH("Both"),
+	NONE("None");
 
-	/**
-	 * A short, one-line summary of the plugin.
-	 */
-	String description() default "";
+	private final String name;
 
-	/**
-	 * A list of plugin keywords, used (together with the name) when searching for plugins.
-	 * Each tag should not contain any spaces, and should be fully lowercase.
-	 */
-	String[] tags() default {};
-
-	boolean enabledByDefault() default true;
-
-	/**
-	 * Whether or not plugin is hidden from configuration panel
-	 */
-	boolean hidden() default false;
-
-	boolean developerPlugin() default false;
-
-	boolean loadWhenOutdated() default false;
-
-	PluginType type() default PluginType.UNCATEGORIZED;
+	@Override
+	public String toString()
+	{
+		return name;
+	}
 }
