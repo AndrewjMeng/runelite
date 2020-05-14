@@ -121,7 +121,7 @@ public class EntityHiderPlugin extends Plugin
 
 		client.setPlayersHidden(config.hidePlayers());
 		client.setPlayersHidden2D(config.hidePlayers2D());
-		client.setHideSpecificPlayers(Text.fromCSV(config.hideSpecificPlayers()));
+//		client.setHideSpecificPlayers(Text.fromCSV(config.hideSpecificPlayers()));
 
 		client.setFriendsHidden(config.hideFriends());
 		client.setClanMatesHidden(config.hideClanMates());

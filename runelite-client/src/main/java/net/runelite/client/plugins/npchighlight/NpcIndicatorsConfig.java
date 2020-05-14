@@ -51,7 +51,7 @@ public interface NpcIndicatorsConfig extends Config
 	)
 	default String getNpcToHighlight()
 	{
-		return "";
+		return "Jal*";
 	}
 
 	@ConfigItem(

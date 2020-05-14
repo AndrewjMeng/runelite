@@ -127,7 +127,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean meleersSection()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigSection(
@@ -182,7 +182,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean zukSection()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigSection(
@@ -314,7 +314,7 @@ public interface InfernoConfig extends Config
 	)
 	default InfernoWaveDisplayMode waveDisplay()
 	{
-		return InfernoWaveDisplayMode.BOTH;
+		return InfernoWaveDisplayMode.NEXT;
 	}
 
 	@ConfigItem(
@@ -398,7 +398,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean hideNibblerDeath()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigItem(
@@ -447,7 +447,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsBat()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -471,7 +471,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean hideBatDeath()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigItem(
@@ -519,7 +519,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsBlob()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -616,7 +616,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsMeleer()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -628,7 +628,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean indicateNpcPositionMeleer()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigItem(
@@ -677,7 +677,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsRanger()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -737,7 +737,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsMage()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
@@ -773,7 +773,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean prayerHealerJad()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigItem(
@@ -857,7 +857,7 @@ public interface InfernoConfig extends Config
 	)
 	default boolean safespotsJad()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
