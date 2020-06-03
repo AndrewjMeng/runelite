@@ -375,6 +375,7 @@ public class PluginManager
 
 		try
 		{
+			log.debug("Plugin {} is now loading", plugin.getClass().getSimpleName());
 			plugin.startUp();
 
 			log.debug("Plugin {} is now running", plugin.getClass().getSimpleName());
@@ -397,6 +398,7 @@ public class PluginManager
 		}
 		catch (Throwable ex)
 		{
+			log.debug("Plugin {} Failed", plugin.getClass().getSimpleName());
 			throw new PluginInstantiationException(ex);
 		}
 

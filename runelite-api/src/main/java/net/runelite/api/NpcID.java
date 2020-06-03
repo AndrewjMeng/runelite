@@ -7481,6 +7481,8 @@ public final class NpcID
 	public static final int SISTER_SEVI = 8274;
 	public static final int SISTER_TOEN = 8275;
 	public static final int SISTER_YRAM = 8276;
+	public static final int HAMELN_THE_JESTER = 8277;
+	public static final int HANCHEN_THE_HOUND = 8278;
 	public static final int KROY = 8279;
 	public static final int DAMIEN_LEUCURTE = 8280;
 	public static final int LORD_CROMBWICK = 8281;
@@ -8495,8 +8497,6 @@ public final class NpcID
 	public static final int MAGIC_INSTRUCTOR_9487 = 9487;
 	public static final int CHICKEN_9488 = 9488;
 	public static final int VELIAF_HURTZ_9489 = 9489;
-	public static final int HAMELN_THE_JESTER = 9490;
-	public static final int HANCHEN_THE_HOUND = 9491;
 	public static final int TANGLEROOT_9492 = 9492;
 	public static final int TANGLEROOT_9493 = 9493;
 	public static final int TANGLEROOT_9494 = 9494;
