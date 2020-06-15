@@ -88,6 +88,7 @@ public interface NPCDefinition
      */
     int getSize();
 
+    int getHealth();
     /**
      * Gets the displayed overhead icon of the NPC.
      */

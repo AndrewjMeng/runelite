@@ -51,6 +51,7 @@ class InfernoNPC
 	@Getter(AccessLevel.PACKAGE)
 	private int ticksTillNextAttack;
 	private int lastAnimation;
+	private int healthRatio;
 	private boolean lastCanAttack;
 	//0 = not in LOS, 1 = in LOS after move, 2 = in LOS
 	private final Map<WorldPoint, Integer> safeSpotCache;
@@ -64,6 +65,7 @@ class InfernoNPC
 		this.lastAnimation = -1;
 		this.lastCanAttack = false;
 		this.safeSpotCache = new HashMap<>();
+		this.healthRatio = npc.getHealthRatio();
 	}
 
 	void updateNextAttack(Attack nextAttack, int ticksTillNextAttack)
@@ -360,6 +362,7 @@ class InfernoNPC
 		NIBBLER(new int[]{NpcID.JALNIB}, Attack.MELEE, 4, 99, 100),
 		BAT(new int[]{NpcID.JALMEJRAH}, Attack.RANGED, 3, 4, 7),
 		BLOB(new int[]{NpcID.JALAK}, Attack.UNKNOWN, 6, 15, 4),
+		BABYBLOB(new int[]{NpcID.JALAKREKXIL,NpcID.JALAKREKMEJ,NpcID.JALAKREKKET}, Attack.UNKNOWN, 4, 15, 10),
 		MELEE(new int[]{NpcID.JALIMKOT}, Attack.MELEE, 4, 1, 3),
 		RANGER(new int[]{NpcID.JALXIL, NpcID.JALXIL_7702}, Attack.RANGED, 4, 98, 2),
 		MAGE(new int[]{NpcID.JALZEK, NpcID.JALZEK_7703}, Attack.MAGIC, 4, 98, 1),
